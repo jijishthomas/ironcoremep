@@ -1,0 +1,17 @@
+{
+  "name": "IronCore MEP",
+  "short_name": "IronCore MEP",
+  "description": "HVAC, Fire Alarm, Electromechanical & Building Maintenance Services in Abu Dhabi.",
+  "icons": [
+    {
+      "src": "/images/logo-placeholder.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#111827",
+  "background_color": "#111827",
+  "display": "standalone",
+  "start_url": "."
+}

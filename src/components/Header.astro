@@ -1,0 +1,39 @@
+---
+import { company, ctaLabels, navLinks } from '../data/site';
+import MobileNav from './MobileNav.astro';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-40 border-b border-steel-200/70 bg-white/95 backdrop-blur">
+	<div class="container flex items-center justify-between py-3">
+		<a href="/" class="flex items-center gap-3">
+			<img src={company.logoPath} alt={company.logoAlt} class="h-10 w-10 rounded" />
+			<div class="leading-tight">
+				<p class="text-lg font-bold text-steel-900">{company.brandName}</p>
+				<p class="text-xs text-steel-500">MEP Services | Abu Dhabi</p>
+			</div>
+		</a>
+
+		<nav aria-label="Primary navigation" class="hidden items-center gap-6 lg:flex">
+			{navLinks.map((link) => (
+				<a
+					href={link.href}
+					aria-current={currentPath === link.href ? 'page' : undefined}
+					class={`text-sm font-medium transition hover:text-brand ${currentPath === link.href ? 'text-brand' : 'text-steel-700'}`}
+				>
+					{link.label}
+				</a>
+			))}
+		</nav>
+
+		<a
+			href="/contact-us"
+			class="hidden rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-dark lg:inline-flex"
+		>
+			{ctaLabels.primary}
+		</a>
+
+		<MobileNav currentPath={currentPath} />
+	</div>
+</header>

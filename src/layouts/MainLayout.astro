@@ -1,0 +1,61 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SeoHead from '../components/SeoHead.astro';
+import { company } from '../data/site';
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description: string;
+	noindex?: boolean;
+}
+
+const { title, description, noindex = false } = Astro.props;
+
+const maybeSite = Astro.site || new URL(company.siteUrl);
+const isPlaceholderSite = maybeSite.hostname === 'localhost';
+
+const structuredData: Record<string, unknown> = {
+	'@context': 'https://schema.org',
+	'@type': 'LocalBusiness',
+	name: company.brandName,
+	legalName: company.legalName,
+	description: company.tagline,
+	url: maybeSite.toString(),
+	image: new URL(company.logoPath, maybeSite).toString(),
+	address: {
+		'@type': 'PostalAddress',
+		streetAddress: company.address,
+		addressLocality: company.location.split(',')[0]?.trim(),
+		addressRegion: 'Abu Dhabi',
+		addressCountry: 'AE'
+	},
+	areaServed: company.serviceAreas,
+	telephone: company.phone,
+	email: company.email
+};
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content="#111827" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="apple-touch-icon" href={company.logoPath} />
+		<SeoHead title={title} description={description} noindex={isPlaceholderSite || noindex} />
+		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+	</head>
+	<body class="min-h-screen bg-white text-steel-800">
+		<a href="#content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-brand focus:px-3 focus:py-2 focus:text-white">Skip to content</a>
+		<Header />
+		<main id="content">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

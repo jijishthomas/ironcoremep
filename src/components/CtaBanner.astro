@@ -1,0 +1,32 @@
+---
+import PrimaryButton from './PrimaryButton.astro';
+import SecondaryButton from './SecondaryButton.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	primaryHref: string;
+	primaryLabel: string;
+	secondaryHref: string;
+	secondaryLabel: string;
+}
+
+const { title, description, primaryHref, primaryLabel, secondaryHref, secondaryLabel } = Astro.props;
+---
+
+<section class="section-space">
+	<div class="container">
+		<div class="overflow-hidden rounded-3xl bg-steel-900 p-8 text-white shadow-shell md:p-12">
+			<div class="grid gap-8 md:grid-cols-[1.45fr_1fr] md:items-center">
+				<div>
+					<h2 class="text-3xl font-bold leading-tight md:text-4xl">{title}</h2>
+					<p class="mt-4 max-w-2xl text-steel-100/90">{description}</p>
+				</div>
+				<div class="flex flex-wrap gap-3 md:justify-end">
+					<PrimaryButton href={primaryHref} label={primaryLabel} />
+					<SecondaryButton href={secondaryHref} label={secondaryLabel} />
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

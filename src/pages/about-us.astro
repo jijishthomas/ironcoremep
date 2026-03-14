@@ -1,0 +1,154 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+
+const serviceCapabilities = [
+	{
+		title: 'HVAC Services',
+		description: 'Installation, ducting, ventilation, maintenance, troubleshooting, and AMC support.',
+		href: '/hvac-services'
+	},
+	{
+		title: 'Fire Alarm Systems',
+		description: 'System setup support, routine inspection, testing, and maintenance coordination.',
+		href: '/fire-alarm-systems'
+	},
+	{
+		title: 'Electromechanical Works',
+		description: 'Mechanical and electrical execution support for buildings and facilities.',
+		href: '/electromechanical-works'
+	},
+	{
+		title: 'Building Maintenance',
+		description: 'Preventive and corrective maintenance for service continuity across key systems.',
+		href: '/building-maintenance'
+	}
+];
+
+const industries = [
+	'Commercial Buildings',
+	'Industrial Facilities',
+	'Office Spaces',
+	'Warehouses',
+	'Residential Properties',
+	'Accommodation Facilities',
+	'Onshore Operations',
+	'Offshore Operations'
+];
+---
+
+<MainLayout
+	title="About IronCore MEP | Electromechanical & HVAC Services in Abu Dhabi"
+	description="IronCore MEP is a Musafha, Abu Dhabi-based technical services company providing HVAC, fire alarm systems, electromechanical works, and building maintenance support."
+>
+	<PageHero
+		title="About IronCore MEP"
+		description="IronCore MEP is a technical services company based in Musafha, Abu Dhabi, focused on practical HVAC, fire alarm, electromechanical, and maintenance support for onshore and offshore service requirements."
+	/>
+
+	<section class="section-space">
+		<div class="container grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+			<div>
+				<SectionHeading
+					eyebrow="Company Overview"
+					title="Technical support built around real site requirements"
+					description="IRON CORE ELECTROMECHANICAL WORKS AND BUILDING MAINTENANCE - L.L.C provides engineering-oriented services with clear execution focus. Our teams support installation, maintenance, and system improvement works with attention to operational needs, service continuity, and practical delivery."
+				/>
+			</div>
+			<div class="card-base bg-steel-900 p-7 text-white">
+				<h2 class="text-xl font-semibold">Operating Profile</h2>
+				<ul class="mt-4 space-y-2 text-sm text-steel-100">
+					<li><span class="font-semibold">Location:</span> Musafha, Abu Dhabi</li>
+					<li><span class="font-semibold">Working Hours:</span> 8:00 AM to 5:00 PM</li>
+					<li><span class="font-semibold">Service Areas:</span> Onshore & Offshore</li>
+				</ul>
+				<a href="/contact-us" class="mt-5 inline-flex text-sm font-semibold text-brand">
+					Discuss your requirement
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space bg-steel-50">
+		<div class="container">
+			<SectionHeading
+				eyebrow="How We Work"
+				title="Execution philosophy focused on quality and maintainability"
+				description="Our work approach is structured to support reliable delivery and long-term system performance."
+			/>
+			<div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+				<FeatureCard title="Practical Engineering Solutions" description="Recommendations are developed around site conditions, operating demands, and maintainable outcomes." />
+				<FeatureCard title="Quality-Focused Execution" description="Installation and service works are carried out with clear checks and workmanship discipline." />
+				<FeatureCard title="Reliable Technical Support" description="Teams remain responsive during execution, troubleshooting, and follow-up support activities." />
+				<FeatureCard title="Timely Service Delivery" description="Scope planning, coordination, and scheduling help keep execution aligned with project timelines." />
+				<FeatureCard title="Maintenance-Oriented Mindset" description="Service methods are designed to reduce avoidable downtime and support stable operation." />
+				<FeatureCard title="Safety-Conscious Work Practices" description="Work execution follows practical safety-oriented procedures and controlled task planning." />
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space">
+		<div class="container">
+			<SectionHeading
+				eyebrow="Service Capability Summary"
+				title="Core service areas from one coordinated team"
+				description="Explore each capability area for more detailed service scope."
+			/>
+			<div class="mt-8 grid gap-5 md:grid-cols-2">
+				{serviceCapabilities.map((item) => (
+					<a href={item.href} class="card-base block p-6 transition hover:border-brand hover:-translate-y-1">
+						<h3 class="text-xl font-semibold text-steel-900">{item.title}</h3>
+						<p class="mt-3 text-sm leading-7 text-steel-600">{item.description}</p>
+						<p class="mt-4 text-sm font-semibold text-brand">View service details</p>
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space bg-steel-50">
+		<div class="container">
+			<SectionHeading
+				eyebrow="Why Choose Us"
+				title="Service support built for ongoing operations"
+				description="IronCore MEP is positioned to support both project delivery and routine maintenance requirements with a practical, response-oriented model."
+			/>
+			<div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+				<FeatureCard title="Professional Engineers & Technicians" description="Technical teams execute with scope clarity and coordination discipline." />
+				<FeatureCard title="Solution-Oriented Execution" description="Service approach focuses on workable results instead of unnecessary complexity." />
+				<FeatureCard title="Fair Pricing Structure" description="Commercial discussions remain transparent and aligned with practical scope." />
+				<FeatureCard title="Responsive Support" description="Inquiry response and on-site coordination prioritize operational urgency." />
+				<FeatureCard title="Service Continuity Focus" description="Maintenance workflows are planned to help preserve daily system reliability." />
+				<FeatureCard title="Adaptable Delivery" description="Support is adaptable across maintenance jobs and wider project needs." />
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space">
+		<div class="container">
+			<SectionHeading
+				eyebrow="Industries & Facility Types"
+				title="Support across commercial, industrial, and residential contexts"
+			/>
+			<div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+				{industries.map((industry) => (
+					<div class="rounded-xl border border-steel-200 bg-white p-4 text-center text-sm font-semibold text-steel-700">
+						{industry}
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<CtaBanner
+		title="Need technical support for an upcoming service requirement?"
+		description="Connect with IronCore MEP to discuss HVAC, fire alarm, electromechanical, or building maintenance scope in Abu Dhabi."
+		primaryHref="/contact-us"
+		primaryLabel="Request a Quote"
+		secondaryHref="/services"
+		secondaryLabel="View Services"
+	/>
+</MainLayout>

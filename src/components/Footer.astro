@@ -1,0 +1,64 @@
+---
+import { company, navLinks } from '../data/site';
+---
+
+<footer class="border-t border-steel-200 bg-steel-900 py-12 text-steel-100">
+	<div class="container grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+		<div>
+			<div class="flex items-center gap-3">
+				<img src={company.logoPath} alt={company.logoAlt} class="h-10 w-10 rounded" />
+				<h2 class="text-2xl font-bold text-white">{company.brandName}</h2>
+			</div>
+			<p class="mt-3 text-sm text-steel-200">{company.legalName}</p>
+			<p class="mt-4 text-sm text-steel-200">{company.location}</p>
+			<p class="mt-1 text-sm text-steel-200">Working Hours: {company.workingHours}</p>
+			<p class="mt-1 text-sm text-steel-200">Service Area: {company.serviceAreas}</p>
+		</div>
+
+		<div>
+			<h3 class="text-sm font-semibold uppercase tracking-wider text-white">Contact (Placeholder)</h3>
+			<ul class="mt-4 space-y-2 text-sm">
+				<li>
+					<span class="font-medium">Phone:</span>
+					<a href={company.phoneHref} class="ml-1 hover:text-brand">{company.phone}</a>
+				</li>
+				<li>
+					<span class="font-medium">WhatsApp:</span>
+					<a href={company.whatsappHref} class="ml-1 hover:text-brand">{company.whatsapp}</a>
+				</li>
+				<li>
+					<span class="font-medium">Email:</span>
+					<a href={company.emailHref} class="ml-1 hover:text-brand">{company.email}</a>
+				</li>
+				<li><span class="font-medium">Address:</span> {company.address}</li>
+			</ul>
+			<a href="/contact-us" class="mt-4 inline-flex text-sm font-semibold text-brand hover:text-white">Request a Quote</a>
+		</div>
+
+		<div>
+			<h3 class="text-sm font-semibold uppercase tracking-wider text-white">Quick Links</h3>
+			<ul class="mt-4 grid grid-cols-2 gap-2 text-sm">
+				{navLinks.map((link) => (
+					<li><a href={link.href} class="hover:text-brand">{link.label}</a></li>
+				))}
+			</ul>
+		</div>
+
+		<div>
+			<h3 class="text-sm font-semibold uppercase tracking-wider text-white">Social (Placeholder)</h3>
+			<ul class="mt-4 space-y-2 text-sm text-steel-200">
+				<li><a href={company.socialLinkedIn} class="hover:text-brand">LinkedIn</a></li>
+				<li><a href={company.socialFacebook} class="hover:text-brand">Facebook</a></li>
+				<li><a href={company.socialInstagram} class="hover:text-brand">Instagram</a></li>
+			</ul>
+			<h3 class="mt-6 text-sm font-semibold uppercase tracking-wider text-white">Inquiry Note</h3>
+			<p class="mt-4 text-sm text-steel-200">
+				For quotations and technical support, use the contact placeholders for now. Replace with final phone,
+				WhatsApp, email, and map link before launch.
+			</p>
+		</div>
+	</div>
+	<div class="container mt-10 border-t border-steel-700 pt-6 text-xs text-steel-300">
+		<p>&copy; {new Date().getFullYear()} {company.brandName}. All rights reserved.</p>
+	</div>
+</footer>

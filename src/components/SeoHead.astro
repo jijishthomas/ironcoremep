@@ -1,0 +1,31 @@
+---
+import { seoDefaults } from '../data/site';
+
+interface Props {
+	title: string;
+	description: string;
+	canonical?: string;
+	ogImage?: string;
+	noindex?: boolean;
+}
+
+const { title, description, canonical, ogImage = seoDefaults.defaultOgImage, noindex = false } = Astro.props;
+const canonicalUrl = canonical || new URL(Astro.url.pathname, Astro.site).toString();
+const ogImageUrl = new URL(ogImage, Astro.site).toString();
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+<link rel="canonical" href={canonicalUrl} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={seoDefaults.siteName} />
+<meta property="og:locale" content={seoDefaults.locale} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={ogImageUrl} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />

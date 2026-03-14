@@ -1,0 +1,153 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import FaqItem from '../components/FaqItem.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import RelatedServices from '../components/RelatedServices.astro';
+---
+
+<MainLayout
+	title="Electromechanical Works in Abu Dhabi | Installation, Integration & Maintenance"
+	description="IronCore MEP provides electromechanical works in Abu Dhabi including installation support, electrical-mechanical coordination, system integration, commissioning, and maintenance."
+>
+	<PageHero
+		title="Electromechanical Works in Abu Dhabi"
+		description="Coordinated electromechanical execution support for building and facility systems, from installation through commissioning and maintenance."
+	/>
+
+	<section class="section-space">
+		<div class="container grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+			<div>
+				<SectionHeading
+					eyebrow="Electromechanical Overview"
+					title="Integrated support for mechanical and electrical scope"
+					description="IronCore MEP supports electromechanical works across project and maintenance contexts. Service delivery is structured around practical execution, system integration, and maintainable outcomes."
+				/>
+			</div>
+			<div class="card-base p-7">
+				<h2 class="text-xl font-semibold text-steel-900">Core Capability Areas</h2>
+				<ul class="mt-4 space-y-2 text-sm text-steel-700">
+					<li>Electromechanical planning and execution support</li>
+					<li>Electrical and mechanical coordination activities</li>
+					<li>Cable routing and installation support</li>
+					<li>Equipment installation and panel integration support</li>
+					<li>Testing, commissioning, and troubleshooting</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space bg-steel-50">
+		<div class="container">
+			<SectionHeading
+				eyebrow="Installation & Execution"
+				title="Structured implementation for site-ready delivery"
+			/>
+			<div class="mt-8 grid gap-6 md:grid-cols-2">
+				<FeatureCard title="Installation Planning" description="Service planning support to align system requirements with feasible site execution." />
+				<FeatureCard title="Cable Routing & Installation" description="Support for cable routing and installation activities as part of integrated electromechanical scope." />
+				<FeatureCard title="Equipment Installation" description="Mechanical and electrical equipment installation support for project and upgrade requirements." />
+				<FeatureCard title="Panel and System Integration" description="Integration support for panels and connected systems to improve coordination and operation." />
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space">
+		<div class="container grid gap-6 lg:grid-cols-2">
+			<div class="card-base p-6">
+				<h2 class="text-2xl font-semibold text-steel-900">Electrical and Mechanical Coordination</h2>
+				<p class="mt-4 prose-copy">
+					Execution support includes coordination between electrical and mechanical activities to reduce interface
+					conflicts and maintain project flow across system touchpoints.
+				</p>
+				<p class="mt-3 prose-copy">
+					Service language for LV/ELV-related scope is kept generic and project-dependent to ensure realistic and
+					accurate representation.
+				</p>
+			</div>
+			<div class="card-base p-6">
+				<h2 class="text-2xl font-semibold text-steel-900">Testing & Commissioning Support</h2>
+				<p class="mt-4 prose-copy">
+					Testing and commissioning support helps verify functional readiness of installed systems. Activities are
+					coordinated around project requirements and agreed procedures.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space bg-steel-50">
+		<div class="container grid gap-6 lg:grid-cols-2">
+			<div class="card-base p-6">
+				<h2 class="text-2xl font-semibold text-steel-900">Maintenance and Troubleshooting</h2>
+				<p class="mt-4 prose-copy">
+					Electromechanical maintenance support includes scheduled checks, issue diagnosis, and corrective
+					interventions to reduce disruption and maintain reliable operation.
+				</p>
+			</div>
+			<div class="card-base bg-steel-900 p-6 text-white">
+				<h2 class="text-2xl font-semibold">Why Choose Us for Electromechanical Works</h2>
+				<ul class="mt-4 space-y-2 text-sm text-steel-100">
+					<li>Coordinated mechanical-electrical execution approach</li>
+					<li>Practical and maintainable system integration support</li>
+					<li>Responsive troubleshooting and maintenance follow-up</li>
+					<li>Support model suited for onshore and offshore operations</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space">
+		<div class="container">
+			<SectionHeading eyebrow="Electromechanical FAQ" title="Frequently asked questions" />
+			<div class="mt-8 grid gap-4">
+				<FaqItem
+					question="What does your electromechanical service scope include?"
+					answer="Scope includes electromechanical planning, installation support, cable routing, panel/system integration, testing, commissioning, and maintenance support."
+				/>
+				<FaqItem
+					question="Do you support both project and maintenance work?"
+					answer="Yes. IronCore MEP supports both project-oriented execution and maintenance-driven electromechanical requirements."
+				/>
+				<FaqItem
+					question="Can you assist with troubleshooting and upgrades?"
+					answer="Yes. We provide troubleshooting support for existing systems and support upgrade-related electromechanical tasks."
+				/>
+				<FaqItem
+					question="Do you work on onshore and offshore requirements?"
+					answer="Yes. Service coordination is available for both onshore and offshore operational contexts."
+				/>
+			</div>
+		</div>
+	</section>
+
+	<CtaBanner
+		title="Need electromechanical support for your facility or project?"
+		description="Discuss your electromechanical scope with IronCore MEP for practical execution and maintenance support in Abu Dhabi."
+		primaryHref="/contact-us"
+		primaryLabel="Request a Quote"
+		secondaryHref="/services"
+		secondaryLabel="Explore Services"
+	/>
+
+	<RelatedServices
+		links={[
+			{
+				title: 'HVAC Services',
+				description: 'Integrated HVAC installation and maintenance support.',
+				href: '/hvac-services'
+			},
+			{
+				title: 'Fire Alarm Systems',
+				description: 'Installation, testing, and maintenance support for alarm systems.',
+				href: '/fire-alarm-systems'
+			},
+			{
+				title: 'Project Applications',
+				description: 'Review representative project-type support across sectors.',
+				href: '/projects'
+			}
+		]}
+	/>
+</MainLayout>

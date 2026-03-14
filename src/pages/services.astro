@@ -1,0 +1,117 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+
+const processSteps = [
+	{
+		title: 'Requirement Review',
+		description: 'We review service priorities, site conditions, and expected outcomes to define practical scope.'
+	},
+	{
+		title: 'Technical Planning',
+		description: 'Execution planning is aligned to installation, maintenance, or troubleshooting requirements.'
+	},
+	{
+		title: 'Execution & Coordination',
+		description: 'Teams carry out works with site coordination, progress visibility, and schedule focus.'
+	},
+	{
+		title: 'Support & Follow-Up',
+		description: 'Post-execution support includes maintenance guidance and additional service planning where needed.'
+	}
+];
+---
+
+<MainLayout
+	title="MEP Services in Abu Dhabi | HVAC, Fire Alarm, Electromechanical & Maintenance"
+	description="Explore IronCore MEP services in Abu Dhabi including HVAC services, fire alarm systems support, electromechanical works, and building maintenance."
+>
+	<PageHero
+		title="Services"
+		description="IronCore MEP delivers practical service coverage across HVAC, fire alarm systems, electromechanical works, and building maintenance in Musafha, Abu Dhabi."
+	/>
+
+	<section class="section-space">
+		<div class="container grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+			<div>
+				<SectionHeading
+					eyebrow="Service Philosophy"
+					title="Coordinated delivery with a maintenance-first mindset"
+					description="Our service model balances technical execution quality, timely delivery, and long-term system support. Whether the requirement is project-based or maintenance-driven, the focus remains on workable outcomes and service continuity."
+				/>
+			</div>
+			<div class="card-base p-7">
+				<h2 class="text-xl font-semibold text-steel-900">Where We Support</h2>
+				<ul class="mt-4 space-y-2 text-sm text-steel-700">
+					<li>Commercial and industrial environments</li>
+					<li>Office and warehouse facilities</li>
+					<li>Residential and accommodation contexts</li>
+					<li>Onshore and offshore operations</li>
+				</ul>
+				<a href="/about-us" class="mt-5 inline-flex text-sm font-semibold text-brand hover:text-brand-dark">
+					Learn more about our approach
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space bg-steel-50">
+		<div class="container">
+			<SectionHeading
+				eyebrow="Core Service Areas"
+				title="Explore detailed pages for each technical service"
+			/>
+			<div class="mt-8 grid gap-6 md:grid-cols-2">
+				<ServiceCard
+					title="HVAC Services"
+					description="End-to-end HVAC support including installation, chilled water works, ducting, ventilation, maintenance, troubleshooting, and AMC coverage."
+					points={['Chillers, AHUs, FCUs, split and ducted systems', 'Duct design, fabrication, installation, and commissioning', 'Preventive and corrective HVAC maintenance services']}
+					href="/hvac-services"
+				/>
+				<ServiceCard
+					title="Fire Alarm Systems"
+					description="Structured support for fire alarm system setup, detection and notification components, testing activities, and fault rectification."
+					points={['Control panel and field device setup support', 'Testing, commissioning, and periodic inspections', 'Corrective maintenance and annual support plans']}
+					href="/fire-alarm-systems"
+				/>
+				<ServiceCard
+					title="Electromechanical Works"
+					description="Execution support for combined mechanical and electrical system requirements, integration tasks, commissioning, and troubleshooting."
+					points={['Electrical and mechanical coordination', 'Equipment and panel integration support', 'Upgrades, corrective actions, and maintenance']}
+					href="/electromechanical-works"
+				/>
+				<ServiceCard
+					title="Building Maintenance"
+					description="Preventive and corrective maintenance support for facility systems to improve reliability and minimize operational interruptions."
+					points={['Routine checks and planned maintenance tasks', 'Breakdown response and rectification support', 'AMC-oriented maintenance planning']}
+					href="/building-maintenance"
+				/>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space">
+		<div class="container">
+			<SectionHeading
+				eyebrow="How We Deliver"
+				title="Simple service process for clear execution"
+			/>
+			<div class="mt-8">
+				<ProcessSteps steps={processSteps} />
+			</div>
+		</div>
+	</section>
+
+	<CtaBanner
+		title="Need support for an HVAC, fire alarm, or electromechanical requirement?"
+		description="Share your service scope and site details with IronCore MEP for a practical technical response."
+		primaryHref="/contact-us"
+		primaryLabel="Request a Quote"
+		secondaryHref="/hvac-services"
+		secondaryLabel="Explore HVAC Services"
+	/>
+</MainLayout>

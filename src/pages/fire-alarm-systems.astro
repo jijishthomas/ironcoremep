@@ -1,0 +1,185 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import FaqItem from '../components/FaqItem.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import RelatedServices from '../components/RelatedServices.astro';
+---
+
+<MainLayout
+	title="Fire Alarm Services in Abu Dhabi | Installation, Testing & Maintenance Support"
+	description="IronCore MEP provides fire alarm systems support in Abu Dhabi including installation coordination, testing, inspections, fault rectification, and maintenance services."
+>
+	<PageHero
+		title="Fire Alarm Systems Support in Abu Dhabi"
+		description="Structured support for fire alarm system setup, testing, inspection, and maintenance with clear technical coordination."
+	/>
+
+	<section class="section-space">
+		<div class="container grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+			<div>
+				<SectionHeading
+					eyebrow="Service Overview"
+					title="Installation and maintenance support for reliable system readiness"
+					description="IronCore MEP provides practical fire alarm system support for projects and existing facilities. Scope is delivered in line with project requirements and agreed service procedures, without overstatement of approvals or certifications."
+				/>
+			</div>
+			<div class="card-base p-7">
+				<h2 class="text-xl font-semibold text-steel-900">Support Includes</h2>
+				<ul class="mt-4 space-y-2 text-sm text-steel-700">
+					<li>System planning and setup support</li>
+					<li>Installation and component integration</li>
+					<li>Testing, commissioning, and inspections</li>
+					<li>Fault finding and rectification support</li>
+					<li>Preventive maintenance planning</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space bg-steel-50">
+		<div class="container">
+			<SectionHeading
+				eyebrow="Installation & Setup"
+				title="Coordinated fire alarm system implementation"
+			/>
+			<div class="mt-8 grid gap-6 md:grid-cols-2">
+				<FeatureCard title="System Planning Support" description="Service planning support for effective layout, device placement, and coordinated implementation." />
+				<FeatureCard title="Supply & Installation Coordination" description="Support for equipment supply alignment and installation execution based on project scope." />
+				<FeatureCard title="Control Panels" description="Control panel installation support including system-level integration planning." />
+				<FeatureCard title="Field Device Installation" description="Smoke detectors, heat detectors, and manual call point installation support." />
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space">
+		<div class="container">
+			<SectionHeading
+				eyebrow="Detection & Notification Components"
+				title="Coverage for key alarm system devices"
+			/>
+			<div class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+				<div class="card-base p-5">
+					<h3 class="text-lg font-semibold text-steel-900">Smoke Detectors</h3>
+					<p class="mt-2 text-sm leading-7 text-steel-600">Installation and maintenance support for smoke detection points across facility zones.</p>
+				</div>
+				<div class="card-base p-5">
+					<h3 class="text-lg font-semibold text-steel-900">Heat Detectors</h3>
+					<p class="mt-2 text-sm leading-7 text-steel-600">Support for heat detection device setup and replacement as required by system design.</p>
+				</div>
+				<div class="card-base p-5">
+					<h3 class="text-lg font-semibold text-steel-900">Manual Call Points</h3>
+					<p class="mt-2 text-sm leading-7 text-steel-600">Manual call point installation and service support to maintain user accessibility and function.</p>
+				</div>
+				<div class="card-base p-5">
+					<h3 class="text-lg font-semibold text-steel-900">Sounders & Notification Devices</h3>
+					<p class="mt-2 text-sm leading-7 text-steel-600">Support for audible and visual notification devices, including strobes where required.</p>
+				</div>
+				<div class="card-base p-5">
+					<h3 class="text-lg font-semibold text-steel-900">Emergency & Exit Light Support</h3>
+					<p class="mt-2 text-sm leading-7 text-steel-600">General support for emergency and exit lighting integration activities where included in project scope.</p>
+				</div>
+				<div class="card-base p-5">
+					<h3 class="text-lg font-semibold text-steel-900">Documentation Support</h3>
+					<p class="mt-2 text-sm leading-7 text-steel-600">Basic service documentation and reporting support for maintenance and handover tracking.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space bg-steel-50">
+		<div class="container grid gap-6 lg:grid-cols-2">
+			<div class="card-base p-6">
+				<h2 class="text-2xl font-semibold text-steel-900">Testing, Commissioning & Inspection</h2>
+				<p class="mt-4 prose-copy">
+					Support includes functional testing and commissioning coordination to verify system operation against
+					project requirements. Periodic inspection activities are also supported for ongoing reliability.
+				</p>
+			</div>
+			<div class="card-base p-6">
+				<h2 class="text-2xl font-semibold text-steel-900">Maintenance & Fault Rectification</h2>
+				<p class="mt-4 prose-copy">
+					Preventive maintenance and fault diagnosis support help reduce unexpected disruptions. Corrective action
+					services are provided for identified issues in panels, field devices, and notification points.
+				</p>
+			</div>
+			<div class="card-base p-6 lg:col-span-2">
+				<h2 class="text-2xl font-semibold text-steel-900">Annual Maintenance Support</h2>
+				<p class="mt-4 prose-copy">
+					Annual maintenance planning is available for facilities seeking scheduled system checks, performance
+					review, and ongoing service continuity support.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space">
+		<div class="container">
+			<SectionHeading
+				eyebrow="Why IronCore MEP"
+				title="Fire alarm support delivered with practical technical focus"
+			/>
+			<div class="mt-8 grid gap-5 md:grid-cols-2">
+				<FeatureCard title="Careful Scope Execution" description="System support is handled with clear task definition and service coordination." />
+				<FeatureCard title="Inspection-Oriented Maintenance" description="Preventive maintenance workflows help sustain service readiness." />
+				<FeatureCard title="Responsive Fault Handling" description="Issue diagnosis and rectification support is structured for quick technical response." />
+				<FeatureCard title="Onshore & Offshore Support Reach" description="Service coordination is available for both onshore and offshore contexts." />
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space bg-steel-50">
+		<div class="container">
+			<SectionHeading eyebrow="Fire Alarm FAQ" title="Frequently asked questions" />
+			<div class="mt-8 grid gap-4">
+				<FaqItem
+					question="Do you support installation of fire alarm system components?"
+					answer="Yes. IronCore MEP supports installation and setup coordination for control panels, detectors, manual call points, and notification devices."
+				/>
+				<FaqItem
+					question="Do you provide testing and commissioning support?"
+					answer="Yes. We provide functional testing and commissioning support aligned with project requirements and agreed procedures."
+				/>
+				<FaqItem
+					question="Can you handle fire alarm maintenance and fault rectification?"
+					answer="Yes. Service scope includes inspection, preventive maintenance, fault diagnosis, and rectification support."
+				/>
+				<FaqItem
+					question="Do you offer annual maintenance support?"
+					answer="Yes. Annual maintenance support can be arranged for facilities requiring scheduled system checks and ongoing service continuity."
+				/>
+			</div>
+		</div>
+	</section>
+
+	<CtaBanner
+		title="Need fire alarm system service support in Abu Dhabi?"
+		description="Share your requirement with IronCore MEP for installation support, inspections, testing, and maintenance planning."
+		primaryHref="/contact-us"
+		primaryLabel="Request a Quote"
+		secondaryHref="/services"
+		secondaryLabel="Back to Services"
+	/>
+
+	<RelatedServices
+		links={[
+			{
+				title: 'HVAC Services',
+				description: 'Installation, ducting, and HVAC maintenance support.',
+				href: '/hvac-services'
+			},
+			{
+				title: 'Electromechanical Works',
+				description: 'Mechanical and electrical system execution support.',
+				href: '/electromechanical-works'
+			},
+			{
+				title: 'Project Applications',
+				description: 'Explore representative fire alarm and MEP project support contexts.',
+				href: '/projects'
+			}
+		]}
+	/>
+</MainLayout>

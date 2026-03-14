@@ -1,0 +1,32 @@
+---
+interface LinkItem {
+	title: string;
+	description: string;
+	href: string;
+}
+
+interface Props {
+	title?: string;
+	description?: string;
+	links: LinkItem[];
+}
+
+const { title = 'Related Services', description, links } = Astro.props;
+---
+
+<section class="section-space bg-steel-50">
+	<div class="container">
+		<div class="max-w-3xl">
+			<h2 class="text-3xl font-bold leading-tight text-steel-900 md:text-4xl">{title}</h2>
+			{description && <p class="mt-4 prose-copy">{description}</p>}
+		</div>
+		<div class="mt-8 grid gap-5 md:grid-cols-3">
+			{links.map((link) => (
+				<a href={link.href} class="card-base block p-6 transition hover:-translate-y-1 hover:border-brand">
+					<h3 class="text-lg font-semibold text-steel-900">{link.title}</h3>
+					<p class="mt-2 text-sm leading-7 text-steel-600">{link.description}</p>
+				</a>
+			))}
+		</div>
+	</div>
+</section>

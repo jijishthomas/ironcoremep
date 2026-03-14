@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">IronCore MEP Open Graph placeholder</title>
+  <desc id="desc">Placeholder social preview with industrial color palette and company name.</desc>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#1F2937" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g1)" />
+  <rect x="80" y="80" width="1040" height="470" rx="24" fill="none" stroke="#374151" stroke-width="2" />
+  <circle cx="170" cy="170" r="42" fill="#C1252D" />
+  <text x="250" y="210" fill="#FFFFFF" font-size="68" font-family="Segoe UI, Arial, sans-serif" font-weight="700">IronCore MEP</text>
+  <text x="250" y="280" fill="#E5E7EB" font-size="36" font-family="Segoe UI, Arial, sans-serif">HVAC | Fire Alarm | Electromechanical | Maintenance</text>
+  <text x="250" y="355" fill="#E5E7EB" font-size="30" font-family="Segoe UI, Arial, sans-serif">Musafha, Abu Dhabi | Onshore & Offshore</text>
+</svg>

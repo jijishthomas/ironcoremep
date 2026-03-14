@@ -1,0 +1,27 @@
+---
+interface Props {
+	title: string;
+	summary: string;
+	scope: string[];
+	href: string;
+}
+
+const { title, summary, scope, href } = Astro.props;
+---
+
+<article class="card-base p-6">
+	<p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand">Representative Project Type</p>
+	<h3 class="mt-2 text-xl font-semibold text-steel-900">{title}</h3>
+	<p class="mt-3 text-sm leading-7 text-steel-600">{summary}</p>
+	<ul class="mt-4 space-y-2 text-sm text-steel-700">
+		{scope.map((item) => (
+			<li class="flex gap-2">
+				<span class="mt-1 h-2 w-2 rounded-full bg-brand"></span>
+				<span>{item}</span>
+			</li>
+		))}
+	</ul>
+	<a href={href} class="mt-5 inline-flex text-sm font-semibold text-brand hover:text-brand-dark">
+		View related service
+	</a>
+</article>

@@ -1,0 +1,22 @@
+---
+interface Props {
+	label: string;
+	value: string;
+	note?: string;
+	href?: string;
+}
+
+const { label, value, note, href } = Astro.props;
+---
+
+<div class="card-base p-5">
+	<p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand">{label}</p>
+	{
+		href ? (
+			<a href={href} class="mt-2 block text-lg font-semibold text-steel-900 hover:text-brand">{value}</a>
+		) : (
+			<p class="mt-2 text-lg font-semibold text-steel-900">{value}</p>
+		)
+	}
+	{note && <p class="mt-2 text-sm text-steel-600">{note}</p>}
+</div>

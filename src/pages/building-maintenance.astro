@@ -1,0 +1,99 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import RelatedServices from '../components/RelatedServices.astro';
+---
+
+<MainLayout
+	title="Building Maintenance Services in Abu Dhabi | Preventive & Corrective Support"
+	description="IronCore MEP provides building maintenance services in Abu Dhabi with preventive maintenance, corrective response, and AMC-oriented support for MEP systems."
+>
+	<PageHero
+		title="Building Maintenance Services in Abu Dhabi"
+		description="Planned and responsive maintenance support for daily facility reliability and long-term system performance."
+	/>
+
+	<section class="section-space">
+		<div class="container grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+			<div>
+				<SectionHeading
+					eyebrow="Maintenance Overview"
+					title="Support model designed for operational continuity"
+					description="IronCore MEP supports building maintenance requirements through scheduled preventive activities and responsive corrective interventions. Service planning focuses on reducing avoidable downtime and preserving system reliability."
+				/>
+			</div>
+			<div class="card-base p-7">
+				<h2 class="text-xl font-semibold text-steel-900">Facility Support Focus</h2>
+				<ul class="mt-4 space-y-2 text-sm text-steel-700">
+					<li>Routine preventive checks and service tasks</li>
+					<li>Corrective response for breakdown conditions</li>
+					<li>MEP-related maintenance support coordination</li>
+					<li>AMC-oriented service planning</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space bg-steel-50">
+		<div class="container">
+			<SectionHeading
+				eyebrow="Maintenance Scope"
+				title="Preventive and corrective service pathways"
+			/>
+			<div class="mt-8 grid gap-6 md:grid-cols-2">
+				<FeatureCard title="Preventive Maintenance Support" description="Planned inspections and routine service activities to help maintain equipment and system performance." />
+				<FeatureCard title="Corrective / Breakdown Response" description="Issue diagnosis and corrective maintenance support for unexpected operational disruptions." />
+				<FeatureCard title="MEP-Related Building Support" description="Maintenance coordination across HVAC, electromechanical, and related building services." />
+				<FeatureCard title="AMC-Oriented Service Model" description="Service support for facilities requiring recurring maintenance schedules and continuity planning." />
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space">
+		<div class="container">
+			<SectionHeading
+				eyebrow="Sectors Supported"
+				title="Maintenance support across varied facility types"
+			/>
+			<div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+				{['Commercial Buildings', 'Industrial Facilities', 'Offices', 'Warehouses', 'Residential Properties', 'Accommodation Facilities', 'Onshore Operations', 'Offshore Operations'].map((sector) => (
+					<div class="rounded-xl border border-steel-200 bg-white p-4 text-center text-sm font-semibold text-steel-700">
+						{sector}
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<CtaBanner
+		title="Need ongoing building maintenance support?"
+		description="Connect with IronCore MEP to discuss preventive maintenance, corrective service response, and AMC-oriented requirements."
+		primaryHref="/contact-us"
+		primaryLabel="Request a Quote"
+		secondaryHref="/services"
+		secondaryLabel="Explore Services"
+	/>
+
+	<RelatedServices
+		links={[
+			{
+				title: 'HVAC Services',
+				description: 'Installation and maintenance support for cooling systems.',
+				href: '/hvac-services'
+			},
+			{
+				title: 'Electromechanical Works',
+				description: 'Mechanical and electrical system support across facilities.',
+				href: '/electromechanical-works'
+			},
+			{
+				title: 'Project Applications',
+				description: 'View representative maintenance and MEP support contexts.',
+				href: '/projects'
+			}
+		]}
+	/>
+</MainLayout>

@@ -1,0 +1,121 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ContactInfoCard from '../components/ContactInfoCard.astro';
+import InquiryForm from '../components/InquiryForm.astro';
+import FaqItem from '../components/FaqItem.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import { company, ctaLabels } from '../data/site';
+---
+
+<MainLayout
+	title="Contact IronCore MEP | Request a Quote in Abu Dhabi"
+	description="Contact IronCore MEP for HVAC, fire alarm, electromechanical, and building maintenance inquiries in Musafha, Abu Dhabi."
+>
+	<PageHero
+		title="Contact IronCore MEP"
+		description="Reach out for quotations, technical discussions, maintenance support, and service inquiries across onshore and offshore requirements."
+	/>
+
+	<section class="section-space">
+		<div class="container">
+			<SectionHeading
+				eyebrow="Contact Information"
+				title="Get in touch using phone, WhatsApp, or email placeholders"
+				description="Contact placeholders are intentionally used in this milestone and can be replaced quickly before launch."
+			/>
+			<div class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+				<ContactInfoCard label="Call Us" value={company.phone} note="Replace with final direct contact number." href={company.phoneHref} />
+				<ContactInfoCard label="WhatsApp Us" value={company.whatsapp} note="Replace with final WhatsApp business number." href={company.whatsappHref} />
+				<ContactInfoCard label="Email Us" value={company.email} note="Replace with final inquiry email address." href={company.emailHref} />
+				<ContactInfoCard label="Address" value={company.address} note="Primary location context: Musafha, Abu Dhabi." href={company.mapLink} />
+				<ContactInfoCard label="Working Hours" value={company.workingHours} note="Office and support schedule." />
+				<ContactInfoCard label="Service Area" value={company.serviceAreas} note="Technical support coverage context." />
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space bg-steel-50">
+		<div class="container grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+			<div class="card-base p-6">
+				<h2 class="text-2xl font-semibold text-steel-900">Location & Service Reach</h2>
+				<p class="mt-4 prose-copy">
+					IronCore MEP operates from {company.location} and supports both onshore and offshore service requirements.
+					Our team coordinates service scope across HVAC, fire alarm systems, electromechanical works, and building
+					maintenance requests.
+				</p>
+				<p class="mt-4 prose-copy">
+					For urgent technical discussions, use the call and WhatsApp placeholders above until final business
+					numbers are published.
+				</p>
+				<div class="mt-5 flex flex-wrap gap-3">
+					<a href="/services" class="rounded-lg border border-steel-300 px-4 py-2 text-sm font-semibold text-steel-800 hover:border-brand hover:text-brand">
+						View All Services
+					</a>
+					<a href="/projects" class="rounded-lg border border-steel-300 px-4 py-2 text-sm font-semibold text-steel-800 hover:border-brand hover:text-brand">
+						View Project Applications
+					</a>
+					<a href={company.mapLink} class="rounded-lg border border-steel-300 px-4 py-2 text-sm font-semibold text-steel-800 hover:border-brand hover:text-brand">
+						View Map Placeholder
+					</a>
+				</div>
+			</div>
+			<div class="grid gap-4">
+				<div class="card-base bg-steel-900 p-6 text-white">
+					<h2 class="text-xl font-semibold">Quick Contact Actions</h2>
+					<div class="mt-4 grid gap-3 sm:grid-cols-2">
+						<a href={company.phoneHref} class="rounded-lg bg-brand px-4 py-3 text-center text-sm font-semibold text-white hover:bg-brand-dark">Call Us</a>
+						<a href={company.whatsappHref} class="rounded-lg bg-brand px-4 py-3 text-center text-sm font-semibold text-white hover:bg-brand-dark">WhatsApp Us</a>
+						<a href={company.emailHref} class="rounded-lg bg-brand px-4 py-3 text-center text-sm font-semibold text-white hover:bg-brand-dark">Email Us</a>
+						<a href="/services" class="rounded-lg bg-brand px-4 py-3 text-center text-sm font-semibold text-white hover:bg-brand-dark">{ctaLabels.primary}</a>
+					</div>
+				</div>
+				<div class="card-base p-6">
+					<h2 class="text-xl font-semibold text-steel-900">Inquiry Guidance</h2>
+					<p class="mt-3 text-sm leading-7 text-steel-600">
+						For faster response, include service type, site location, expected timeline, and whether your request is
+						project-related or maintenance-related.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space">
+		<div class="container grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+			<InquiryForm />
+			<div class="space-y-4">
+				<SectionHeading
+					eyebrow="Contact FAQ"
+					title="Helpful inquiry questions"
+				/>
+				<FaqItem
+					question="What services can I inquire about?"
+					answer="You can inquire about HVAC services, fire alarm systems support, electromechanical works, building maintenance, and related project support requirements."
+				/>
+				<FaqItem
+					question="Do you support onshore and offshore requirements?"
+					answer="Yes. IronCore MEP supports both onshore and offshore service requirements."
+				/>
+				<FaqItem
+					question="Can I request HVAC maintenance support?"
+					answer="Yes. HVAC maintenance support is available, including preventive and corrective service requirements."
+				/>
+				<FaqItem
+					question="Can I contact you for electromechanical or fire alarm scope discussions?"
+					answer="Yes. The team supports both electromechanical and fire alarm service discussions along with quotation planning."
+				/>
+			</div>
+		</div>
+	</section>
+
+	<CtaBanner
+		title="Ready to discuss your service requirement?"
+		description="Contact IronCore MEP for technical consultation, maintenance support, and quotation planning in Abu Dhabi."
+		primaryHref="/services"
+		primaryLabel={ctaLabels.primary}
+		secondaryHref="/projects"
+		secondaryLabel="View Project Applications"
+	/>
+</MainLayout>

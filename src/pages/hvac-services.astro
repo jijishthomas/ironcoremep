@@ -1,0 +1,225 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import FaqItem from '../components/FaqItem.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import RelatedServices from '../components/RelatedServices.astro';
+
+const installationSystems = [
+	'Chillers',
+	'Packaged A/C Units',
+	'Air Handling Units (AHUs)',
+	'Fan Coil Units (FCUs)',
+	'Ducted systems',
+	'Normal Split A/C systems'
+];
+
+const maintenanceScope = [
+	'Complete AC system cleaning and servicing',
+	'Air filter replacement and coil cleaning',
+	'Duct cleaning, sealing, and inspection',
+	'Thermostat calibration and control optimization',
+	'Refrigerant top-up, leak detection, and pressure testing',
+	'Compressor and motor inspection for safety and performance',
+	'Emergency repair and system troubleshooting',
+	'Preventive maintenance contracts (AMC) for homes and offices',
+	'Indoor air quality checks for healthier environments'
+];
+---
+
+<MainLayout
+	title="HVAC Services in Abu Dhabi | Installation, Ducting & HVAC Maintenance"
+	description="IronCore MEP provides HVAC services in Abu Dhabi including installation, chilled water works, ducting, ventilation, testing, commissioning, and preventive maintenance support."
+>
+	<PageHero
+		title="HVAC Services in Abu Dhabi"
+		description="Comprehensive HVAC installation, maintenance, ducting, ventilation, and engineering support for commercial, industrial, and residential requirements."
+	/>
+
+	<section class="section-space">
+		<div class="container grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+			<div>
+				<SectionHeading
+					eyebrow="HVAC Overview"
+					title="Installation, system performance support, and lifecycle maintenance"
+					description="IronCore MEP supports HVAC systems from pre-engineering and feasibility assessment through installation, commissioning, routine maintenance, and troubleshooting. The focus is to deliver stable system performance with practical and maintainable solutions."
+				/>
+			</div>
+			<div class="card-base p-7">
+				<h2 class="text-xl font-semibold text-steel-900">Scope Highlights</h2>
+				<ul class="mt-4 space-y-2 text-sm text-steel-700">
+					<li>Installation of all major HVAC equipment types</li>
+					<li>Chilled water pipeline and pump installation works</li>
+					<li>GI/MS ducting and ventilation works</li>
+					<li>Preventive and corrective HVAC maintenance</li>
+					<li>Testing, commissioning, and system modifications</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space bg-steel-50">
+		<div class="container">
+			<SectionHeading
+				eyebrow="HVAC Installation"
+				title="Equipment installation for varied cooling requirements"
+				description="Our installation services cover a wide range of HVAC equipment and related chilled water infrastructure."
+			/>
+			<div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+				{installationSystems.map((item) => (
+					<div class="card-base p-5">
+						<h3 class="text-lg font-semibold text-steel-900">{item}</h3>
+					</div>
+				))}
+			</div>
+			<div class="mt-6 grid gap-5 md:grid-cols-2">
+				<div class="card-base p-6">
+					<h3 class="text-xl font-semibold text-steel-900">Chilled Water Pipe Line Works</h3>
+					<p class="mt-3 text-sm leading-7 text-steel-600">
+						Planning and execution support for chilled water line installation with coordination for site routing,
+						connection points, and maintainability.
+					</p>
+				</div>
+				<div class="card-base p-6">
+					<h3 class="text-xl font-semibold text-steel-900">Chilled Water Pump Installation</h3>
+					<p class="mt-3 text-sm leading-7 text-steel-600">
+						Pump installation support covering positioning, connection preparation, and performance-oriented
+						commissioning alignment.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space">
+		<div class="container">
+			<SectionHeading
+				eyebrow="Ducting & Ventilation"
+				title="Design, fabrication, installation, and commissioning support"
+				description="Ducting and ventilation works are handled with execution accuracy and serviceability in mind."
+			/>
+			<div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+				<FeatureCard title="GI and MS Ducting Works" description="Installation of GI/MS ducting solutions for project and retrofit requirements." />
+				<FeatureCard title="Industrial & Commercial Ventilation" description="Ventilation system support for improved airflow and operational conditions." />
+				<FeatureCard title="HVAC Duct Design & Engineering" description="Duct layout planning and technical engineering support for effective distribution." />
+				<FeatureCard title="Duct Fabrication" description="Fabrication planning support aligned to project dimensions and installation needs." />
+				<FeatureCard title="On-Site Installation" description="Execution support for fitting, alignment, and integration with connected HVAC systems." />
+				<FeatureCard title="Testing & Commissioning" description="System testing and commissioning activities to verify function and readiness." />
+			</div>
+			<div class="mt-5 card-base p-6">
+				<h3 class="text-xl font-semibold text-steel-900">Maintenance & Modifications</h3>
+				<p class="mt-3 prose-copy">
+					Duct network updates, sealing, and service modifications are supported where required to improve airflow
+					performance and maintain system efficiency.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space bg-steel-50">
+		<div class="container">
+			<SectionHeading
+				eyebrow="HVAC Maintenance"
+				title="Preventive and corrective maintenance for reliable operation"
+			/>
+			<div class="mt-8 grid gap-4 md:grid-cols-2">
+				{maintenanceScope.map((item) => (
+					<div class="card-base flex items-start gap-3 p-5">
+						<span class="mt-2 h-2.5 w-2.5 rounded-full bg-brand"></span>
+						<p class="text-sm leading-7 text-steel-700">{item}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space">
+		<div class="container grid gap-6 lg:grid-cols-2">
+			<div class="card-base p-6">
+				<h2 class="text-2xl font-semibold text-steel-900">Engineering & Feasibility Support</h2>
+				<p class="mt-4 prose-copy">
+					Pre-engineering, feasibility reviews, and solution planning are integrated into service execution to
+					reduce avoidable rework and improve decision confidence before implementation.
+				</p>
+				<p class="mt-3 prose-copy">
+					Recommendations are prepared around site context, operational priorities, and practical maintenance
+					outcomes.
+				</p>
+			</div>
+			<div class="card-base bg-steel-900 p-6 text-white">
+				<h2 class="text-2xl font-semibold">Why Choose IronCore MEP for HVAC</h2>
+				<ul class="mt-4 space-y-2 text-sm text-steel-100">
+					<li>Technical teams focused on practical execution quality</li>
+					<li>Support for both installation and ongoing maintenance scope</li>
+					<li>Structured troubleshooting and emergency response support</li>
+					<li>Onshore and offshore service planning capability</li>
+					<li>Service continuity mindset for long-term operation</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-space bg-steel-50">
+		<div class="container">
+			<SectionHeading
+				eyebrow="HVAC FAQ"
+				title="Common HVAC service questions"
+			/>
+			<div class="mt-8 grid gap-4">
+				<FaqItem
+					question="What HVAC systems do you install?"
+					answer="IronCore MEP supports installation of chillers, packaged A/C units, AHUs, FCUs, ducted systems, and split A/C systems based on project requirements."
+				/>
+				<FaqItem
+					question="Do you provide HVAC maintenance in Abu Dhabi?"
+					answer="Yes. We provide HVAC maintenance support in Abu Dhabi including cleaning, servicing, inspections, troubleshooting, and preventive maintenance planning."
+				/>
+				<FaqItem
+					question="Do you support ducting and ventilation works?"
+					answer="Yes. Scope includes GI/MS ducting, duct design and fabrication support, on-site installation, ventilation works, and testing and commissioning."
+				/>
+				<FaqItem
+					question="Do you offer preventive maintenance contracts (AMC)?"
+					answer="Yes. Preventive maintenance contract support is available for homes, offices, and other facility requirements."
+				/>
+				<FaqItem
+					question="Can you support industrial and commercial HVAC requirements?"
+					answer="Yes. We support HVAC requirements across commercial and industrial contexts, including onshore and offshore operations."
+				/>
+			</div>
+		</div>
+	</section>
+
+	<CtaBanner
+		title="Need HVAC installation or maintenance support in Abu Dhabi?"
+		description="Share your HVAC requirement with IronCore MEP for technical planning, installation support, and ongoing maintenance solutions."
+		primaryHref="/contact-us"
+		primaryLabel="Request a Quote"
+		secondaryHref="/services"
+		secondaryLabel="View All Services"
+	/>
+
+	<RelatedServices
+		title="Explore Related Service Areas"
+		description="For integrated site requirements, you can combine HVAC support with our other MEP service capabilities."
+		links={[
+			{
+				title: 'Building Maintenance',
+				description: 'Planned and corrective maintenance support across core building systems.',
+				href: '/building-maintenance'
+			},
+			{
+				title: 'Electromechanical Works',
+				description: 'Mechanical and electrical coordination support for facility systems.',
+				href: '/electromechanical-works'
+			},
+			{
+				title: 'Project Applications',
+				description: 'View representative project types and technical support applications.',
+				href: '/projects'
+			}
+		]}
+	/>
+</MainLayout>

@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--bg-dark: #111827;
+	--bg-light: #f9fafb;
+	--text-main: #1f2937;
+	--text-muted: #4b5563;
+	--accent: #c1252d;
+	--accent-dark: #9f1a21;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	@apply bg-white text-steel-800 antialiased;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+	@apply outline-none ring-2 ring-brand ring-offset-2;
+}
+
+.section-space {
+	@apply py-16 md:py-20;
+}
+
+.prose-copy {
+	@apply text-base leading-7 text-steel-600;
+}
+
+.card-base {
+	@apply rounded-2xl border border-steel-200 bg-white shadow-card;
+}

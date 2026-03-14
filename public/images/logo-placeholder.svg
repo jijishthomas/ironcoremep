@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">IronCore MEP placeholder logo</title>
+  <desc id="desc">Placeholder logo mark using red and steel colors.</desc>
+  <rect width="160" height="160" rx="20" fill="#111827" />
+  <rect x="28" y="28" width="104" height="104" rx="12" fill="#C1252D" />
+  <path d="M60 54h40v12H86v40H74V66H60z" fill="#fff" />
+</svg>
