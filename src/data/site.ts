@@ -1,7 +1,7 @@
 export const company = {
 	brandName: 'IronCore MEP',
 	legalName: 'IRON CORE ELECTROMECHANICAL WORKS AND BUILDING MAINTENANCE - L.L.C',
-	tagline: 'HVAC, Fire Alarm, Electromechanical & Building Maintenance Services',
+	tagline: 'Fire Safety System Design, Installation, Maintenance & Approval Support',
 	siteUrl: 'https://ironcoremep.example',
 	primaryDomain: 'https://ironcoremep.example',
 	location: 'Musafha, Abu Dhabi',
@@ -38,10 +38,8 @@ export const navLinks = [
 	{ label: 'Home', href: '/' },
 	{ label: 'About Us', href: '/about-us' },
 	{ label: 'Services', href: '/services' },
-	{ label: 'HVAC Services', href: '/hvac-services' },
 	{ label: 'Fire Alarm Systems', href: '/fire-alarm-systems' },
-	{ label: 'Electromechanical Works', href: '/electromechanical-works' },
-	{ label: 'Building Maintenance', href: '/building-maintenance' },
+	{ label: 'Fire Suppression Systems', href: '/fire-suppression-systems' },
 	{ label: 'Projects', href: '/projects' },
 	{ label: 'Contact Us', href: '/contact-us' }
 ];

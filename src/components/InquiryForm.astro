@@ -1,4 +1,5 @@
 ---
+import { fireServices } from '../data/fire-services';
 ---
 
 <form class="card-base p-6" aria-describedby="form-note">
@@ -26,10 +27,9 @@
 		<label class="text-sm font-medium text-steel-700 md:col-span-2">
 			Service Required
 			<select id="inquiry-service" class="mt-1 w-full rounded-lg border border-steel-300 px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30" name="service">
-				<option>HVAC Services</option>
-				<option>Fire Alarm Systems</option>
-				<option>Electromechanical Works</option>
-				<option>Building Maintenance</option>
+				{fireServices.map((service) => (
+					<option>{service.title}</option>
+				))}
 				<option>Project Support Inquiry</option>
 			</select>
 		</label>

@@ -1,0 +1,101 @@
+---
+import PageHero from './PageHero.astro';
+import SectionHeading from './SectionHeading.astro';
+import RelatedServices from './RelatedServices.astro';
+import CtaBanner from './CtaBanner.astro';
+import type { FireService } from '../data/fire-services';
+import { relatedServiceLinks } from '../data/fire-services';
+
+interface Props {
+  service: FireService;
+}
+
+const { service } = Astro.props;
+const relatedLinks = relatedServiceLinks(service.relatedSlugs);
+---
+
+<PageHero title={service.heroTitle} description={service.heroDescription} />
+
+<section class="section-space">
+  <div class="container grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+    <div>
+      <SectionHeading
+        eyebrow="Service Overview"
+        title={service.overviewTitle}
+        description={service.overview}
+      />
+    </div>
+    <div class="card-base p-7">
+      <h2 class="text-xl font-semibold text-steel-900">What We Provide</h2>
+      <ul class="mt-4 space-y-2 text-sm text-steel-700">
+        {service.whatWeProvide.map((item) => (
+          <li class="flex items-start gap-2">
+            <span class="mt-1 h-2 w-2 rounded-full bg-brand"></span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section-space bg-steel-50">
+  <div class="container">
+    <SectionHeading eyebrow="Applications" title="Where this service is commonly applied" />
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {service.applications.map((application) => (
+        <div class="rounded-xl border border-steel-200 bg-white p-4 text-sm font-semibold text-steel-700">
+          {application}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="section-space">
+  <div class="container grid gap-6 lg:grid-cols-2">
+    <div class="card-base p-6">
+      <h2 class="text-2xl font-semibold text-steel-900">System Types & Scope Coverage</h2>
+      <ul class="mt-4 space-y-2 text-sm text-steel-700">
+        {service.systemCoverage.map((item) => (
+          <li class="flex items-start gap-2">
+            <span class="mt-1 h-2 w-2 rounded-full bg-brand"></span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="card-base p-6">
+      <h2 class="text-2xl font-semibold text-steel-900">Testing, Compliance & Maintenance</h2>
+      <p class="mt-4 prose-copy">{service.complianceAndMaintenance}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-space bg-steel-50">
+  <div class="container">
+    <SectionHeading eyebrow="Why It Matters" title="Operational and safety benefits" />
+    <div class="mt-8 grid gap-5 md:grid-cols-2">
+      {service.benefits.map((benefit) => (
+        <div class="card-base p-6">
+          <h3 class="text-lg font-semibold text-steel-900">{benefit}</h3>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<CtaBanner
+  title={service.ctaTitle}
+  description={service.ctaDescription}
+  primaryHref="/contact-us"
+  primaryLabel="Request a Site Assessment"
+  secondaryHref="/services"
+  secondaryLabel="View All Services"
+/>
+
+<RelatedServices
+  title="Related Fire Safety Services"
+  description="Explore linked service areas that are commonly delivered as part of an integrated fire safety scope."
+  links={relatedLinks}
+/>

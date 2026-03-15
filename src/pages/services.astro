@@ -4,114 +4,132 @@ import PageHero from '../components/PageHero.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
+import FeatureCard from '../components/FeatureCard.astro';
 import CtaBanner from '../components/CtaBanner.astro';
+import {
+  fireServices,
+  planningSupportPoints,
+  serviceDeliveryLifecycle,
+  systemsCoverage
+} from '../data/fire-services';
 
 const processSteps = [
-	{
-		title: 'Requirement Review',
-		description: 'We review service priorities, site conditions, and expected outcomes to define practical scope.'
-	},
-	{
-		title: 'Technical Planning',
-		description: 'Execution planning is aligned to installation, maintenance, or troubleshooting requirements.'
-	},
-	{
-		title: 'Execution & Coordination',
-		description: 'Teams carry out works with site coordination, progress visibility, and schedule focus.'
-	},
-	{
-		title: 'Support & Follow-Up',
-		description: 'Post-execution support includes maintenance guidance and additional service planning where needed.'
-	}
+  {
+    title: 'Site Review & Consultation',
+    description: 'We assess risk profile, occupancy, and system requirements before defining scope.'
+  },
+  {
+    title: 'Design, Supply & Installation',
+    description: 'Selected systems are designed, supplied, and installed to match project and operational needs.'
+  },
+  {
+    title: 'Testing & Commissioning',
+    description: 'Functional checks and commissioning activities confirm performance and readiness.'
+  },
+  {
+    title: 'AMC & Approval Coordination',
+    description: 'Preventive maintenance and Civil Defence approval support keep systems compliant and serviceable.'
+  }
 ];
 ---
 
 <MainLayout
-	title="MEP Services in Abu Dhabi | HVAC, Fire Alarm, Electromechanical & Maintenance"
-	description="Explore IronCore MEP services in Abu Dhabi including HVAC services, fire alarm systems support, electromechanical works, and building maintenance."
+  title="Fire Safety Services in Abu Dhabi | Installation, Testing, AMC & Approvals"
+  description="Explore complete fire safety services including fire alarm, suppression, firefighting equipment, sprinkler, emergency lighting, AMC, Civil Defence approvals, and fire pump systems."
 >
-	<PageHero
-		title="Services"
-		description="IronCore MEP delivers practical service coverage across HVAC, fire alarm systems, electromechanical works, and building maintenance in Musafha, Abu Dhabi."
-	/>
+  <PageHero
+    title="Fire Safety Services"
+    description="Our services cover the full fire protection lifecycle: design and consultations, supply, installation, testing and commissioning, maintenance, and Civil Defence approval support."
+  />
 
-	<section class="section-space">
-		<div class="container grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-			<div>
-				<SectionHeading
-					eyebrow="Service Philosophy"
-					title="Coordinated delivery with a maintenance-first mindset"
-					description="Our service model balances technical execution quality, timely delivery, and long-term system support. Whether the requirement is project-based or maintenance-driven, the focus remains on workable outcomes and service continuity."
-				/>
-			</div>
-			<div class="card-base p-7">
-				<h2 class="text-xl font-semibold text-steel-900">Where We Support</h2>
-				<ul class="mt-4 space-y-2 text-sm text-steel-700">
-					<li>Commercial and industrial environments</li>
-					<li>Office and warehouse facilities</li>
-					<li>Residential and accommodation contexts</li>
-					<li>Onshore and offshore operations</li>
-				</ul>
-				<a href="/about-us" class="mt-5 inline-flex text-sm font-semibold text-brand hover:text-brand-dark">
-					Learn more about our approach
-				</a>
-			</div>
-		</div>
-	</section>
+  <section class="section-space">
+    <div class="container grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div>
+        <SectionHeading
+          eyebrow="Service Overview"
+          title="Complete fire protection support across systems and lifecycle stages"
+          description="We deliver coordinated technical support for core fire safety systems with practical execution and compliance-focused documentation."
+        />
+      </div>
+      <div class="card-base p-7">
+        <h2 class="text-xl font-semibold text-steel-900">Planning & Consultation Scope</h2>
+        <ul class="mt-4 space-y-2 text-sm text-steel-700">
+          {planningSupportPoints.map((item) => (
+            <li class="flex items-start gap-2">
+              <span class="mt-1 h-2 w-2 rounded-full bg-brand"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
 
-	<section class="section-space bg-steel-50">
-		<div class="container">
-			<SectionHeading
-				eyebrow="Core Service Areas"
-				title="Explore detailed pages for each technical service"
-			/>
-			<div class="mt-8 grid gap-6 md:grid-cols-2">
-				<ServiceCard
-					title="HVAC Services"
-					description="End-to-end HVAC support including installation, chilled water works, ducting, ventilation, maintenance, troubleshooting, and AMC coverage."
-					points={['Chillers, AHUs, FCUs, split and ducted systems', 'Duct design, fabrication, installation, and commissioning', 'Preventive and corrective HVAC maintenance services']}
-					href="/hvac-services"
-				/>
-				<ServiceCard
-					title="Fire Alarm Systems"
-					description="Structured support for fire alarm system setup, detection and notification components, testing activities, and fault rectification."
-					points={['Control panel and field device setup support', 'Testing, commissioning, and periodic inspections', 'Corrective maintenance and annual support plans']}
-					href="/fire-alarm-systems"
-				/>
-				<ServiceCard
-					title="Electromechanical Works"
-					description="Execution support for combined mechanical and electrical system requirements, integration tasks, commissioning, and troubleshooting."
-					points={['Electrical and mechanical coordination', 'Equipment and panel integration support', 'Upgrades, corrective actions, and maintenance']}
-					href="/electromechanical-works"
-				/>
-				<ServiceCard
-					title="Building Maintenance"
-					description="Preventive and corrective maintenance support for facility systems to improve reliability and minimize operational interruptions."
-					points={['Routine checks and planned maintenance tasks', 'Breakdown response and rectification support', 'AMC-oriented maintenance planning']}
-					href="/building-maintenance"
-				/>
-			</div>
-		</div>
-	</section>
+  <section class="section-space bg-steel-50">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Primary Service Categories"
+        title="All core fire safety services"
+      />
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        {fireServices.map((service) => (
+          <ServiceCard
+            title={service.title}
+            description={service.cardSummary}
+            points={service.cardPoints}
+            href={service.href}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
 
-	<section class="section-space">
-		<div class="container">
-			<SectionHeading
-				eyebrow="How We Deliver"
-				title="Simple service process for clear execution"
-			/>
-			<div class="mt-8">
-				<ProcessSteps steps={processSteps} />
-			</div>
-		</div>
-	</section>
+  <section class="section-space">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Lifecycle Delivery"
+        title="How we support projects and ongoing operations"
+      />
+      <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {serviceDeliveryLifecycle.map((item) => (
+          <FeatureCard title={item.title} description={item.description} />
+        ))}
+      </div>
+    </div>
+  </section>
 
-	<CtaBanner
-		title="Need support for an HVAC, fire alarm, or electromechanical requirement?"
-		description="Share your service scope and site details with IronCore MEP for a practical technical response."
-		primaryHref="/contact-us"
-		primaryLabel="Request a Quote"
-		secondaryHref="/hvac-services"
-		secondaryLabel="Explore HVAC Services"
-	/>
+  <section class="section-space bg-steel-50">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Systems & Products"
+        title="Coverage across active protection systems and supporting products"
+      />
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {systemsCoverage.map((item) => (
+          <div class="rounded-xl border border-steel-200 bg-white p-4 text-sm font-semibold text-steel-700">{item}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Delivery Process"
+        title="Simple process with clear execution checkpoints"
+      />
+      <div class="mt-8">
+        <ProcessSteps steps={processSteps} />
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner
+    title="Need support for a new installation or system upgrade?"
+    description="Talk to our team about fire safety consultations, product supply, testing and commissioning, AMC, or Civil Defence approval coordination."
+    primaryHref="/contact-us"
+    primaryLabel="Request a Site Assessment"
+    secondaryHref="/fire-alarm-systems"
+    secondaryLabel="Explore Fire Alarm Systems"
+  />
 </MainLayout>

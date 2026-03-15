@@ -8,156 +8,156 @@ import PlaceholderNotice from '../components/PlaceholderNotice.astro';
 import CtaBanner from '../components/CtaBanner.astro';
 
 const representativeProjects = [
-	{
-		title: 'Industrial HVAC Installation Support',
-		summary: 'Installation support for cooling equipment, chilled water lines, and system readiness in industrial environments.',
-		scope: ['Equipment installation coordination', 'Chilled water line and pump support', 'Testing and commissioning alignment'],
-		href: '/hvac-services'
-	},
-	{
-		title: 'Commercial Ducting & Ventilation Works',
-		summary: 'Ducting and ventilation support for commercial premises requiring airflow planning and execution.',
-		scope: ['GI/MS ducting support', 'Duct fabrication and installation', 'Ventilation and airflow balancing support'],
-		href: '/hvac-services'
-	},
-	{
-		title: 'Fire Alarm Installation & Maintenance Support',
-		summary: 'Project and maintenance support for fire alarm systems across building and facility contexts.',
-		scope: ['Detection and notification device support', 'Testing and inspection activities', 'Fault rectification and annual service support'],
-		href: '/fire-alarm-systems'
-	},
-	{
-		title: 'Electromechanical Execution for Facilities',
-		summary: 'Mechanical and electrical execution support for installation, coordination, and integration tasks.',
-		scope: ['Cable routing and equipment setup', 'Panel and system integration support', 'Testing and troubleshooting support'],
-		href: '/electromechanical-works'
-	},
-	{
-		title: 'Preventive HVAC AMC Support',
-		summary: 'Routine preventive maintenance support for HVAC system performance and operational continuity.',
-		scope: ['Planned service schedules', 'Inspection and cleaning routines', 'Performance checks and corrective follow-up'],
-		href: '/hvac-services'
-	},
-	{
-		title: 'Building Maintenance for Operational Sites',
-		summary: 'Preventive and corrective maintenance support for occupied facilities and operational environments.',
-		scope: ['Routine facility checks', 'Breakdown response coordination', 'AMC-oriented service pathways'],
-		href: '/building-maintenance'
-	},
-	{
-		title: 'Warehouse, Office, and Accommodation Support',
-		summary: 'MEP service support tailored to working facilities and accommodation settings.',
-		scope: ['HVAC and ventilation support', 'Electrical and mechanical service coordination', 'Maintenance planning support'],
-		href: '/services'
-	},
-	{
-		title: 'Onshore & Offshore Technical Support',
-		summary: 'Service planning and execution support across onshore and offshore operating contexts.',
-		scope: ['Flexible technical coordination', 'Site requirement-based planning', 'Integrated maintenance support'],
-		href: '/contact-us'
-	}
+  {
+    title: 'Commercial Fire Alarm Upgrade Program',
+    summary: 'System upgrade support for conventional/addressable fire alarm coverage in occupied commercial properties.',
+    scope: ['Design and device placement coordination', 'Installation, testing, and commissioning', 'Documentation and handover support'],
+    href: '/fire-alarm-systems'
+  },
+  {
+    title: 'Critical-Room Suppression Deployment',
+    summary: 'Specialized suppression implementation for data centers and control rooms.',
+    scope: ['FM-200 / clean agent system planning', 'Release logic testing and integration', 'Preventive maintenance pathway setup'],
+    href: '/fire-suppression-systems'
+  },
+  {
+    title: 'Warehouse Sprinkler and Pump Integration',
+    summary: 'Automatic sprinkler and fire pump infrastructure support for large facility coverage.',
+    scope: ['Sprinkler network installation support', 'Pump and pressure performance testing', 'Hydrant/landing valve coordination'],
+    href: '/fire-sprinkler-systems'
+  },
+  {
+    title: 'Firefighting Equipment Readiness Program',
+    summary: 'Supply and service support for extinguishers, hose reels, hydrants, and related equipment.',
+    scope: ['Equipment supply and installation', 'Inspection and servicing cycles', 'Refill/replacement coordination'],
+    href: '/firefighting-equipment'
+  },
+  {
+    title: 'Emergency Lighting and Evacuation Route Upgrade',
+    summary: 'Emergency and exit light deployment for safer evacuation pathways during power loss events.',
+    scope: ['Exit sign and luminaire placement', 'Routine testing and maintenance planning', 'Evacuation plan alignment'],
+    href: '/emergency-lighting-exit-signs'
+  },
+  {
+    title: 'Facility-Wide AMC Program',
+    summary: 'Preventive maintenance and periodic testing for multi-system fire safety reliability.',
+    scope: ['Scheduled inspections and performance tests', 'Rectification follow-up and records', 'Civil Defence audit support documentation'],
+    href: '/annual-maintenance-contracts'
+  },
+  {
+    title: 'Civil Defence Approval Coordination',
+    summary: 'Documentation and inspection-readiness support from installation stage to final certification process.',
+    scope: ['Submission and documentation support', 'Inspection preparation and follow-up', 'Coordination of corrective actions'],
+    href: '/civil-defence-approvals'
+  },
+  {
+    title: 'Onshore and Offshore Fire Safety Scope',
+    summary: 'Integrated fire safety service coordination for projects and operational facilities across varied environments.',
+    scope: ['Design, installation, and commissioning support', 'Maintenance and readiness planning', 'Approval and compliance workflow support'],
+    href: '/services'
+  }
 ];
 
 const processSteps = [
-	{
-		title: 'Requirement Review',
-		description: 'Understand site requirements, service priority, and execution expectations.'
-	},
-	{
-		title: 'Technical Assessment',
-		description: 'Review technical scope, system conditions, and practical service constraints.'
-	},
-	{
-		title: 'Scope Planning',
-		description: 'Define execution plan, required support activities, and maintenance considerations.'
-	},
-	{
-		title: 'Installation / Execution',
-		description: 'Carry out support work with coordinated implementation and progress follow-through.'
-	},
-	{
-		title: 'Testing & Verification',
-		description: 'Perform testing and functional checks as part of project and service workflows.'
-	},
-	{
-		title: 'Handover & Maintenance Support',
-		description: 'Support post-execution continuity through maintenance planning and technical follow-up.'
-	}
+  {
+    title: 'Requirement Review',
+    description: 'Understand site risks, occupancy profile, and system priorities.'
+  },
+  {
+    title: 'Technical Assessment',
+    description: 'Review existing conditions and define practical scope for each protection layer.'
+  },
+  {
+    title: 'Scope Planning',
+    description: 'Coordinate design, supply, installation, and testing sequence for implementation.'
+  },
+  {
+    title: 'Execution',
+    description: 'Carry out installation and system integration with stage-wise quality checks.'
+  },
+  {
+    title: 'Testing & Commissioning',
+    description: 'Verify performance and readiness through functional tests and commissioning records.'
+  },
+  {
+    title: 'Handover & AMC Support',
+    description: 'Support operational continuity with reporting, preventive maintenance, and approval coordination.'
+  }
 ];
 ---
 
 <MainLayout
-	title="Projects & Technical Support Applications | IronCore MEP Abu Dhabi"
-	description="Explore representative project types and technical support applications delivered by IronCore MEP across HVAC, fire alarm, electromechanical, and maintenance requirements."
+  title="Projects & Fire Safety Application Scope | IronCore MEP Abu Dhabi"
+  description="Explore representative project applications across fire alarm, suppression, sprinkler, pump, emergency lighting, AMC, and Civil Defence coordination."
 >
-	<PageHero
-		title="Projects & Technical Support Applications"
-		description="IronCore MEP supports HVAC, fire alarm, electromechanical, and building maintenance requirements across commercial, industrial, onshore, and offshore contexts in Abu Dhabi."
-	/>
+  <PageHero
+    title="Projects & Fire Safety Application Scope"
+    description="IronCore MEP supports fire safety project and maintenance requirements across commercial, industrial, onshore, and offshore contexts in Abu Dhabi."
+  />
 
-	<section class="section-space">
-		<div class="container">
-			<SectionHeading
-				eyebrow="Capabilities Overview"
-				title="Representative support scope for project and maintenance requirements"
-				description="This page presents representative project types and service applications to explain technical capabilities. Named case studies, client references, and portfolio visuals will be added only after approved content is available."
-			/>
-		</div>
-	</section>
+  <section class="section-space">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Capabilities Overview"
+        title="Representative support scope for project and maintenance requirements"
+        description="This page presents representative application types to explain technical capabilities. Named case studies, client references, and portfolio visuals are added only after approved content is available."
+      />
+    </div>
+  </section>
 
-	<section class="section-space bg-steel-50">
-		<div class="container">
-			<SectionHeading
-				eyebrow="Representative Project Types"
-				title="Typical applications of our service capabilities"
-			/>
-			<div class="mt-8 grid gap-6 md:grid-cols-2">
-				{representativeProjects.map((item) => <ProjectTypeCard {...item} />)}
-			</div>
-		</div>
-	</section>
+  <section class="section-space bg-steel-50">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Representative Project Types"
+        title="Typical applications of our fire safety services"
+      />
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        {representativeProjects.map((item) => <ProjectTypeCard {...item} />)}
+      </div>
+    </div>
+  </section>
 
-	<section class="section-space">
-		<div class="container">
-			<SectionHeading
-				eyebrow="Sectors We Support"
-				title="Technical service coverage across varied environments"
-			/>
-			<div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-				{['Commercial Buildings', 'Industrial Facilities', 'Offices', 'Warehouses', 'Residential & Accommodation', 'Onshore Facilities', 'Offshore Operations', 'Mixed-Use Operational Sites'].map((sector) => (
-					<div class="rounded-xl border border-steel-200 bg-white p-4 text-center text-sm font-semibold text-steel-700">{sector}</div>
-				))}
-			</div>
-		</div>
-	</section>
+  <section class="section-space">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Sectors We Support"
+        title="Fire safety service coverage across varied environments"
+      />
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {['Commercial Buildings', 'Industrial Facilities', 'Offices', 'Warehouses', 'Residential & Accommodation', 'Onshore Facilities', 'Offshore Operations', 'Mixed-Use Operational Sites'].map((sector) => (
+          <div class="rounded-xl border border-steel-200 bg-white p-4 text-center text-sm font-semibold text-steel-700">{sector}</div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-	<section class="section-space bg-steel-50">
-		<div class="container">
-			<SectionHeading
-				eyebrow="Work Approach"
-				title="Delivery model used across project-support assignments"
-			/>
-			<div class="mt-8">
-				<ProcessSteps steps={processSteps} />
-			</div>
-		</div>
-	</section>
+  <section class="section-space bg-steel-50">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Work Approach"
+        title="Delivery model used across fire safety assignments"
+      />
+      <div class="mt-8">
+        <ProcessSteps steps={processSteps} />
+      </div>
+    </div>
+  </section>
 
-	<section class="section-space">
-		<div class="container">
-			<PlaceholderNotice
-				title="Portfolio Reference Note"
-				description="Detailed project references, client-named case studies, and approved project visuals are intentionally not published yet. These can be shared upon request or added in a future update once formally approved."
-			/>
-		</div>
-	</section>
+  <section class="section-space">
+    <div class="container">
+      <PlaceholderNotice
+        title="Portfolio Reference Note"
+        description="Detailed project references, client-named case studies, and approved project visuals are intentionally not published yet. These can be shared upon request or added in a future update once formally approved."
+      />
+    </div>
+  </section>
 
-	<CtaBanner
-		title="Need technical support for an upcoming project scope?"
-		description="Contact IronCore MEP to discuss project requirements, maintenance needs, or service quotations in Musafha, Abu Dhabi."
-		primaryHref="/contact-us"
-		primaryLabel="Request a Quote"
-		secondaryHref="/services"
-		secondaryLabel="Explore Services"
-	/>
+  <CtaBanner
+    title="Need support for an upcoming fire safety scope?"
+    description="Contact IronCore MEP to discuss design, installation, testing and commissioning, AMC planning, or Civil Defence approval coordination."
+    primaryHref="/contact-us"
+    primaryLabel="Request a Site Assessment"
+    secondaryHref="/services"
+    secondaryLabel="Explore Services"
+  />
 </MainLayout>
