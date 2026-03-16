@@ -23,6 +23,6 @@ const { title, description, points = [], href } = Astro.props;
 		</ul>
 	)}
 	<a href={href} class="mt-6 inline-flex text-sm font-semibold text-brand hover:text-brand-dark">
-		Learn more
+		Learn more<span class="sr-only"> about {title}</span>
 	</a>
 </article>

@@ -18,8 +18,8 @@ export const company = {
 	socialLinkedIn: '#',
 	socialFacebook: '#',
 	socialInstagram: '#',
-	logoPath: '/images/logo-placeholder.svg',
-	logoAlt: 'IronCore MEP logo placeholder'
+	logoPath: '/logo.svg',
+	logoAlt: 'IronCore MEP logo'
 };
 
 export const ctaLabels = {
@@ -42,4 +42,10 @@ export const navLinks = [
 	{ label: 'Fire Suppression Systems', href: '/fire-suppression-systems' },
 	{ label: 'Projects', href: '/projects' },
 	{ label: 'Contact Us', href: '/contact-us' }
+];
+
+export const additionalServiceLinks = [
+	{ label: 'HVAC Services', href: '/hvac-services' },
+	{ label: 'Electromechanical Works', href: '/electromechanical-works' },
+	{ label: 'Building Maintenance', href: '/building-maintenance' }
 ];

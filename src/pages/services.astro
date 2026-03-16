@@ -12,6 +12,7 @@ import {
   serviceDeliveryLifecycle,
   systemsCoverage
 } from '../data/fire-services';
+import { additionalServiceLinks } from '../data/site';
 
 const processSteps = [
   {
@@ -120,6 +121,24 @@ const processSteps = [
       />
       <div class="mt-8">
         <ProcessSteps steps={processSteps} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space bg-steel-50">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Additional MEP Services"
+        title="Explore related HVAC and electromechanical support pages"
+        description="These pages cover wider MEP support capabilities and remain linked for complete site discoverability."
+      />
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        {additionalServiceLinks.map((link) => (
+          <a href={link.href} class="card-base p-5 transition hover:-translate-y-1 hover:border-brand">
+            <h3 class="text-lg font-semibold text-steel-900">{link.label}</h3>
+            <p class="mt-2 text-sm text-steel-600">View details</p>
+          </a>
+        ))}
       </div>
     </div>
   </section>

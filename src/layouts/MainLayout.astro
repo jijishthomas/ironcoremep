@@ -15,26 +15,28 @@ const { title, description, noindex = false } = Astro.props;
 
 const maybeSite = Astro.site || new URL(company.siteUrl);
 const isPlaceholderSite = maybeSite.hostname === 'localhost';
+const sameAs = [company.socialLinkedIn, company.socialFacebook, company.socialInstagram].filter((link) =>
+	link.startsWith('http://') || link.startsWith('https://')
+);
 
-const structuredData: Record<string, unknown> = {
-	'@context': 'https://schema.org',
-	'@type': 'LocalBusiness',
-	name: company.brandName,
-	legalName: company.legalName,
-	description: company.tagline,
-	url: maybeSite.toString(),
-	image: new URL(company.logoPath, maybeSite).toString(),
-	address: {
-		'@type': 'PostalAddress',
-		streetAddress: company.address,
-		addressLocality: company.location.split(',')[0]?.trim(),
-		addressRegion: 'Abu Dhabi',
-		addressCountry: 'AE'
+const structuredData: Record<string, unknown>[] = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'Organization',
+		name: company.brandName,
+		legalName: company.legalName,
+		description: company.tagline,
+		url: maybeSite.toString(),
+		logo: new URL(company.logoPath, maybeSite).toString(),
+		...(sameAs.length > 0 ? { sameAs } : {})
 	},
-	areaServed: company.serviceAreas,
-	telephone: company.phone,
-	email: company.email
-};
+	{
+		'@context': 'https://schema.org',
+		'@type': 'WebSite',
+		name: company.brandName,
+		url: maybeSite.toString()
+	}
+];
 ---
 
 <!doctype html>
@@ -46,7 +48,7 @@ const structuredData: Record<string, unknown> = {
 		<meta name="theme-color" content="#111827" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="manifest" href="/site.webmanifest" />
-		<link rel="apple-touch-icon" href={company.logoPath} />
+		<link rel="apple-touch-icon" href="/favicon.svg" />
 		<SeoHead title={title} description={description} noindex={isPlaceholderSite || noindex} />
 		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 	</head>

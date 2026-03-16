@@ -28,9 +28,9 @@ import { fireServices } from '../data/fire-services';
 			Service Required
 			<select id="inquiry-service" class="mt-1 w-full rounded-lg border border-steel-300 px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30" name="service">
 				{fireServices.map((service) => (
-					<option>{service.title}</option>
+					<option value={service.title}>{service.title}</option>
 				))}
-				<option>Project Support Inquiry</option>
+				<option value="Project Support Inquiry">Project Support Inquiry</option>
 			</select>
 		</label>
 		<label class="text-sm font-medium text-steel-700 md:col-span-2">
@@ -38,10 +38,10 @@ import { fireServices } from '../data/fire-services';
 			<textarea id="inquiry-message" class="mt-1 min-h-32 w-full rounded-lg border border-steel-300 px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30" name="message" placeholder="Briefly describe your requirement, location, and expected timeline."></textarea>
 		</label>
 	</div>
-	<button type="button" class="mt-5 w-full rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-white md:w-auto" aria-disabled="true">
+	<button type="button" class="mt-5 w-full cursor-not-allowed rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-white opacity-70 md:w-auto" disabled>
 		Request a Quote (Form Setup Pending)
 	</button>
-	<p id="form-note" class="mt-3 text-xs text-steel-500" role="status">
+	<p id="form-note" class="mt-3 text-xs text-steel-500">
 		This form is currently UI-only. For immediate response, use phone, WhatsApp, or email placeholders shown on this page.
 	</p>
 </form>

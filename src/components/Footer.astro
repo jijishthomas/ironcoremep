@@ -1,14 +1,29 @@
 ---
-import { company, navLinks } from '../data/site';
+import { additionalServiceLinks, company, navLinks } from '../data/site';
 import { fireServices } from '../data/fire-services';
+
+const socialLinks = [
+	{ label: 'LinkedIn', href: company.socialLinkedIn },
+	{ label: 'Facebook', href: company.socialFacebook },
+	{ label: 'Instagram', href: company.socialInstagram }
+];
+
+const isRealExternalUrl = (href: string) => href.startsWith('http://') || href.startsWith('https://');
 ---
 
 <footer class="border-t border-steel-200 bg-steel-900 py-12 text-steel-100">
 	<div class="container grid gap-10 md:grid-cols-2 lg:grid-cols-4">
 		<div>
-			<div class="flex items-center gap-3">
-				<img src={company.logoPath} alt={company.logoAlt} class="h-10 w-10 rounded" />
-				<h2 class="text-2xl font-bold text-white">{company.brandName}</h2>
+			<div class="flex items-center">
+				<img
+					src="/logo_white.svg"
+					alt={company.logoAlt}
+					width="150"
+					height="56"
+					loading="lazy"
+					decoding="async"
+					class="h-14 w-[150px]"
+				/>
 			</div>
 			<p class="mt-3 text-sm text-steel-200">{company.legalName}</p>
 			<p class="mt-4 text-sm text-steel-200">{company.location}</p>
@@ -33,7 +48,12 @@ import { fireServices } from '../data/fire-services';
 				</li>
 				<li><span class="font-medium">Address:</span> {company.address}</li>
 			</ul>
-			<a href="/contact-us" class="mt-4 inline-flex text-sm font-semibold text-brand hover:text-white">Request a Quote</a>
+			<a
+				href="/contact-us"
+				class="mt-4 inline-flex text-sm font-semibold text-steel-100 underline decoration-steel-300 decoration-2 underline-offset-4 transition hover:text-white hover:decoration-white visited:text-steel-100 focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-steel-900"
+			>
+				Request a Quote
+			</a>
 		</div>
 
 		<div>
@@ -49,14 +69,26 @@ import { fireServices } from '../data/fire-services';
 					<li><a href={service.href} class="hover:text-brand">{service.title}</a></li>
 				))}
 			</ul>
+			<h3 class="mt-6 text-sm font-semibold uppercase tracking-wider text-white">Additional Services</h3>
+			<ul class="mt-3 space-y-2 text-sm">
+				{additionalServiceLinks.map((link) => (
+					<li><a href={link.href} class="hover:text-brand">{link.label}</a></li>
+				))}
+			</ul>
 		</div>
 
 		<div>
 			<h3 class="text-sm font-semibold uppercase tracking-wider text-white">Social (Placeholder)</h3>
 			<ul class="mt-4 space-y-2 text-sm text-steel-200">
-				<li><a href={company.socialLinkedIn} class="hover:text-brand">LinkedIn</a></li>
-				<li><a href={company.socialFacebook} class="hover:text-brand">Facebook</a></li>
-				<li><a href={company.socialInstagram} class="hover:text-brand">Instagram</a></li>
+				{socialLinks.map((social) => (
+					<li>
+						{isRealExternalUrl(social.href) ? (
+							<a href={social.href} class="hover:text-brand" target="_blank" rel="noreferrer">{social.label}</a>
+						) : (
+							<span>{social.label} (To Be Updated)</span>
+						)}
+					</li>
+				))}
 			</ul>
 			<h3 class="mt-6 text-sm font-semibold uppercase tracking-wider text-white">Inquiry Note</h3>
 			<p class="mt-4 text-sm text-steel-200">
