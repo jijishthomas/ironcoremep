@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../utils/paths';
+
 interface Props {
 	title: string;
 	description: string;
@@ -22,7 +24,7 @@ const { title, description, points = [], href } = Astro.props;
 			))}
 		</ul>
 	)}
-	<a href={href} class="mt-6 inline-flex text-sm font-semibold text-brand hover:text-brand-dark">
+	<a href={withBase(href)} class="mt-6 inline-flex text-sm font-semibold text-brand hover:text-brand-dark">
 		Learn more<span class="sr-only"> about {title}</span>
 	</a>
 </article>

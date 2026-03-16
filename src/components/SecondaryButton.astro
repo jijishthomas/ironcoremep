@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../utils/paths';
+
 interface Props {
 	href: string;
 	label: string;
@@ -8,7 +10,7 @@ const { href, label } = Astro.props;
 ---
 
 <a
-	href={href}
+	href={withBase(href)}
 	class="inline-flex items-center justify-center rounded-lg border border-steel-300 bg-white px-6 py-3 text-sm font-semibold text-steel-800 transition hover:border-brand hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
 >
 	{label}

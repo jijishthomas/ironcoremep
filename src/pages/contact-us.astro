@@ -8,6 +8,7 @@ import FaqItem from '../components/FaqItem.astro';
 import CtaBanner from '../components/CtaBanner.astro';
 import { company, ctaLabels } from '../data/site';
 import { fireServices, serviceDeliveryLifecycle } from '../data/fire-services';
+import { withBase } from '../utils/paths';
 ---
 
 <MainLayout
@@ -51,10 +52,10 @@ import { fireServices, serviceDeliveryLifecycle } from '../data/fire-services';
           testing and commissioning, maintenance, or approval support.
         </p>
         <div class="mt-5 flex flex-wrap gap-3">
-          <a href="/services" class="rounded-lg border border-steel-300 px-4 py-2 text-sm font-semibold text-steel-800 hover:border-brand hover:text-brand">
+          <a href={withBase('/services')} class="rounded-lg border border-steel-300 px-4 py-2 text-sm font-semibold text-steel-800 hover:border-brand hover:text-brand">
             View All Services
           </a>
-          <a href="/projects" class="rounded-lg border border-steel-300 px-4 py-2 text-sm font-semibold text-steel-800 hover:border-brand hover:text-brand">
+          <a href={withBase('/projects')} class="rounded-lg border border-steel-300 px-4 py-2 text-sm font-semibold text-steel-800 hover:border-brand hover:text-brand">
             View Project Applications
           </a>
           <a href={company.mapLink} class="rounded-lg border border-steel-300 px-4 py-2 text-sm font-semibold text-steel-800 hover:border-brand hover:text-brand">
@@ -69,7 +70,7 @@ import { fireServices, serviceDeliveryLifecycle } from '../data/fire-services';
             <a href={company.phoneHref} class="rounded-lg bg-brand px-4 py-3 text-center text-sm font-semibold text-white hover:bg-brand-dark">Call Us</a>
             <a href={company.whatsappHref} class="rounded-lg bg-brand px-4 py-3 text-center text-sm font-semibold text-white hover:bg-brand-dark">WhatsApp Us</a>
             <a href={company.emailHref} class="rounded-lg bg-brand px-4 py-3 text-center text-sm font-semibold text-white hover:bg-brand-dark">Email Us</a>
-            <a href="/services" class="rounded-lg bg-brand px-4 py-3 text-center text-sm font-semibold text-white hover:bg-brand-dark">{ctaLabels.primary}</a>
+            <a href={withBase('/services')} class="rounded-lg bg-brand px-4 py-3 text-center text-sm font-semibold text-white hover:bg-brand-dark">{ctaLabels.primary}</a>
           </div>
         </div>
         <div class="card-base p-6">
@@ -120,7 +121,7 @@ import { fireServices, serviceDeliveryLifecycle } from '../data/fire-services';
       <SectionHeading eyebrow="Primary Services" title="Request support for any core fire safety category" />
       <div class="mt-8 grid gap-4 sm:grid-cols-2">
         {fireServices.map((service) => (
-          <a href={service.href} class="rounded-xl border border-steel-200 bg-white p-4 text-sm font-semibold text-steel-700 transition hover:border-brand hover:text-brand">
+          <a href={withBase(service.href)} class="rounded-xl border border-steel-200 bg-white p-4 text-sm font-semibold text-steel-700 transition hover:border-brand hover:text-brand">
             {service.title}
           </a>
         ))}

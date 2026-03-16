@@ -6,6 +6,7 @@ import SecondaryButton from '../components/SecondaryButton.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import FeatureCard from '../components/FeatureCard.astro';
 import CtaBanner from '../components/CtaBanner.astro';
+import { withBase } from '../utils/paths';
 import {
   fireServiceBySlug,
   homeFeaturedServiceSlugs,
@@ -56,7 +57,7 @@ const featuredServices = homeFeaturedServiceSlugs.map((slug) => fireServiceBySlu
             <span class="font-semibold">Onshore & Offshore</span>
           </li>
         </ul>
-        <a href="/services" class="mt-6 inline-flex text-sm font-semibold text-brand hover:text-brand-dark">
+        <a href={withBase('/services')} class="mt-6 inline-flex text-sm font-semibold text-brand hover:text-brand-dark">
           View all fire safety services
         </a>
       </div>
@@ -115,7 +116,7 @@ const featuredServices = homeFeaturedServiceSlugs.map((slug) => fireServiceBySlu
         ))}
       </div>
       <div class="mt-8 text-center">
-        <a href="/services" class="inline-flex text-sm font-semibold text-brand hover:text-brand-dark">View all 8 services</a>
+        <a href={withBase('/services')} class="inline-flex text-sm font-semibold text-brand hover:text-brand-dark">View all 8 services</a>
       </div>
     </div>
   </section>

@@ -1,5 +1,6 @@
 ---
 import { ctaLabels, navLinks } from '../data/site';
+import { withBase } from '../utils/paths';
 
 interface Props {
 	currentPath: string;
@@ -23,7 +24,7 @@ const { currentPath } = Astro.props;
 			{navLinks.map((link) => (
 				<li>
 					<a
-						href={link.href}
+						href={withBase(link.href)}
 						aria-current={currentPath === link.href ? 'page' : undefined}
 						class={`block rounded-md px-3 py-2 text-sm font-medium ${currentPath === link.href ? 'bg-brand-soft text-brand' : 'text-steel-700 hover:bg-steel-100'}`}
 					>
@@ -33,7 +34,7 @@ const { currentPath } = Astro.props;
 			))}
 			<li class="pt-2">
 				<a
-					href="/contact-us"
+					href={withBase('/contact-us')}
 					class="block rounded-md bg-brand px-3 py-2 text-center text-sm font-semibold text-white hover:bg-brand-dark"
 				>
 					{ctaLabels.primary}

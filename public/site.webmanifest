@@ -4,7 +4,7 @@
   "description": "Fire safety systems, maintenance, and Civil Defence support in Abu Dhabi.",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "./favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"

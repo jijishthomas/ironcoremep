@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../utils/paths';
+
 interface LinkItem {
 	title: string;
 	description: string;
@@ -22,7 +24,7 @@ const { title = 'Related Services', description, links } = Astro.props;
 		</div>
 		<div class="mt-8 grid gap-5 md:grid-cols-3">
 			{links.map((link) => (
-				<a href={link.href} class="card-base block p-6 transition hover:-translate-y-1 hover:border-brand">
+				<a href={withBase(link.href)} class="card-base block p-6 transition hover:-translate-y-1 hover:border-brand">
 					<h3 class="text-lg font-semibold text-steel-900">{link.title}</h3>
 					<p class="mt-2 text-sm leading-7 text-steel-600">{link.description}</p>
 				</a>

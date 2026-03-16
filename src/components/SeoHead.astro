@@ -1,5 +1,6 @@
 ---
 import { seoDefaults } from '../data/site';
+import { withBase } from '../utils/paths';
 
 interface Props {
 	title: string;
@@ -11,7 +12,7 @@ interface Props {
 
 const { title, description, canonical, ogImage = seoDefaults.defaultOgImage, noindex = false } = Astro.props;
 const canonicalUrl = canonical || new URL(Astro.url.pathname, Astro.site).toString();
-const ogImageUrl = new URL(ogImage, Astro.site).toString();
+const ogImageUrl = new URL(withBase(ogImage), Astro.site).toString();
 ---
 
 <title>{title}</title>

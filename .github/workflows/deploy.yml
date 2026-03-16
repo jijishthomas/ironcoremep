@@ -2,7 +2,7 @@ name: Deploy Astro Site to GitHub Pages
 
 on:
   push:
-    branches: ["master"]
+    branches: ["master", "main"]
   workflow_dispatch:
 
 permissions:
@@ -33,8 +33,8 @@ jobs:
       - name: Build site
         run: npm run build
         env:
-          SITE_URL: ${{ vars.SITE_URL || 'https://ironcoremep.example' }}
-          BASE_PATH: ${{ vars.BASE_PATH || '/' }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://jijishthomas.github.io/ironcoremep/' }}
+          BASE_PATH: ${{ vars.BASE_PATH || '/ironcoremep/' }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

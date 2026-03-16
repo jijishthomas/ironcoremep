@@ -1,15 +1,16 @@
 ---
 import { company, ctaLabels, navLinks } from '../data/site';
 import MobileNav from './MobileNav.astro';
+import { stripBase, withBase } from '../utils/paths';
 
-const currentPath = Astro.url.pathname;
+const currentPath = stripBase(Astro.url.pathname);
 ---
 
 <header class="sticky top-0 z-40 border-b border-steel-200/70 bg-white/95 backdrop-blur">
 	<div class="container flex items-center justify-between py-3">
-		<a href="/" class="flex items-center">
+		<a href={withBase('/')} class="flex items-center">
 			<img
-				src="/logo.svg"
+				src={withBase('/logo.svg')}
 				alt={company.logoAlt}
 				width="150"
 				height="56"
@@ -23,7 +24,7 @@ const currentPath = Astro.url.pathname;
 		<nav aria-label="Primary navigation" class="hidden items-center gap-6 lg:flex">
 			{navLinks.map((link) => (
 				<a
-					href={link.href}
+					href={withBase(link.href)}
 					aria-current={currentPath === link.href ? 'page' : undefined}
 					class={`text-sm font-medium transition hover:text-brand ${currentPath === link.href ? 'text-brand' : 'text-steel-700'}`}
 				>
@@ -33,7 +34,7 @@ const currentPath = Astro.url.pathname;
 		</nav>
 
 		<a
-			href="/contact-us"
+			href={withBase('/contact-us')}
 			class="hidden rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-dark lg:inline-flex"
 		>
 			{ctaLabels.primary}
